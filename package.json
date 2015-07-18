@@ -18,14 +18,14 @@
         "tildify": "^1.1.0",
         "vueify": "^1.1.5"
     },
-    "keywords": {
+    "keywords": [
         "vue",
         "component",
         "umd",
         "amd",
         "browserify",
         "commonjs"
-    },
+    ],
     "devDependencies": {},
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
