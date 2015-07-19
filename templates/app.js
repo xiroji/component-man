@@ -7,6 +7,6 @@ requirejs.config({
     }]
 });
 
-define(['./vue.min', 'component'], function(Vue, component) {
+define(['./node_modules/vue/dist/vue', 'component'], function(Vue, component) {
     new Vue(component).$mount('#component');
 });
