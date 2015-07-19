@@ -1,3 +1,5 @@
+#!/usr/bin/env node 
+
 var Liftoff = require('liftoff');
 var chalk = require('chalk');
 var tildify = require('tildify');
