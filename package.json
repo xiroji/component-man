@@ -1,43 +1,43 @@
 {
-    "name": "component-man",
-    "version": "1.0.4",
-    "description": "",
-    "main": "index.js",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/xiroji/component-man"
-    },
-    "dependencies": {
-        "browserify": "^11.0.0",
-        "browserify-umdify": "^1.0.3",
-        "chalk": "^1.1.0",
-        "commander": "^2.8.1",
-        "connect": "^3.4.0",
-        "fs-extra": "^0.21.0",
-        "insert-css": "^0.2.0",
-        "liftoff": "^2.1.0",
-        "lodash": "^3.10.0",
-        "npm-package-arg": "^4.0.1",
-        "read-package-tree": "^5.0.0",
-        "serve-static": "^1.10.0",
-        "tildify": "^1.1.0",
-        "vueify": "^1.1.5"
-    },
-    "keywords": [
-        "vue",
-        "component",
-        "umd",
-        "amd",
-        "browserify",
-        "commonjs"
-    ],
-    "devDependencies": {},
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "author": "Hardeep Shoker",
-    "license": "MIT",
-    "bin": {
-        "component-man": "cli.js"
-    }
+  "name": "component-man",
+  "version": "1.0.4",
+  "description": "",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xiroji/component-man"
+  },
+  "dependencies": {
+    "browserify": "^11.0.0",
+    "browserify-umdify": "^1.0.3",
+    "chalk": "^1.1.0",
+    "commander": "^2.8.1",
+    "connect": "^3.4.0",
+    "fs-extra": "^0.23.1",
+    "insert-css": "^0.2.0",
+    "liftoff": "^2.1.0",
+    "lodash": "^3.10.0",
+    "npm-package-arg": "^4.0.1",
+    "read-package-tree": "^5.0.0",
+    "serve-static": "^1.10.0",
+    "tildify": "^1.1.0",
+    "vueify": "^1.1.5"
+  },
+  "keywords": [
+    "vue",
+    "component",
+    "umd",
+    "amd",
+    "browserify",
+    "commonjs"
+  ],
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Hardeep Shoker",
+  "license": "MIT",
+  "bin": {
+    "component-man": "cli.js"
+  }
 }
