@@ -25,7 +25,7 @@ module.exports = function(options, env) {
         }
     });
 
-    var configPath = env.configPath || path.join(options.cwd, "package.json");
+    var configPath = path.join(options.cwd, "package.json");
 
     if (!fs.existsSync(configPath)) {
         fs.appendFileSync(configPath, "{}");
