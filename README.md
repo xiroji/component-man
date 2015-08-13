@@ -1,6 +1,7 @@
 # Component Man
 
 [![Join the chat at https://gitter.im/xiroji/component-man](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/xiroji/component-man?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Dependency Status](https://david-dm.org/xiroji/component-man.svg)](https://david-dm.org/xiroji/component-man)
 
 > This node module helps create small modular components using [Browserify](http://browserify.org), [Vueify](https://github.com/vuejs/vueify), and [Browserify-Umdify](https://github.com/xiroji/browserify-umdify).
 
