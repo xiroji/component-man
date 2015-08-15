@@ -77,7 +77,7 @@ module.exports.exec = function(options, env) {
             if (err) commands.exit(err);
 
             console.log(chalk.magenta("\n" + packageJson.name,
-                " initialized"));
+                "initialized"));
 
             readPackageTree(cwd, function(err, packageTree) {
 
