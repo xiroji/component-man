@@ -30,9 +30,8 @@ function invoke(env) {
         .option('-m, --modules <modules...>', "bootstrap project with modules")
         .description("initialize a new component in current folder")
         .action(function(name, opt) {
-            require('./bin/init')({
+            require('./bin/init').exec({
                 name: name,
-                cwd: env.cwd,
                 modules: (opt.modules) ? opt.modules.split(',') : []
             }, env);
         });

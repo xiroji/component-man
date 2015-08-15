@@ -15,23 +15,30 @@ function failedToSave(dep) {
         ' please add it manually to your package.json');
 }
 
-module.exports = function(options, env) {
+var mergeModules = module.exports.mergeModules = function(modules) {
+
+    modules = modules || [];
 
     var defaultModules = ['requirejs', 'vue', 'insert-css'];
 
     _.each(defaultModules, function(module) {
-        if (!_.includes(options.modules, module)) {
-            options.modules.push(module);
+        if (!_.includes(modules, module)) {
+            modules.push(module);
         }
     });
 
-    var configPath = path.join(options.cwd, "package.json");
+    return modules;
+};
 
-    if (!fs.existsSync(configPath)) {
-        fs.appendFileSync(configPath, "{}");
+var parseConfig = module.exports.parseConfig = function(options) {
+
+    console.log(chalk.magenta("Executing in:", options.cwd));
+
+    if (!fs.existsSync(options.configPath)) {
+        fs.appendFileSync(options.configPath, "{}");
     }
 
-    var packageJson = JSON.parse(fs.readFileSync(configPath));
+    var packageJson = JSON.parse(fs.readFileSync(options.configPath));
 
     var vueMainFile = 'component.vue';
     var exports = {};
@@ -48,26 +55,37 @@ module.exports = function(options, env) {
         }
     }, packageJson);
 
+    return packageJson;
+}
+
+module.exports.exec = function(options, env) {
+
+    var modules = options.modules = mergeModules(options.modules);
+    var cwd = options.cwd = process.cwd();
+    var configPath = options.configPath = path.join(cwd, "package.json");
+
+    var packageJson = parseConfig(options);
+
     fs.writeFileSync(configPath, JSON.stringify(packageJson, null, 4));
 
     npm.load(configPath, function(err) {
 
         if (err) commands.exit(err);
 
-        npm.commands.install(options.modules, function(err) {
+        npm.commands.install(modules, function(err) {
 
             if (err) commands.exit(err);
 
             console.log(chalk.magenta("\n" + packageJson.name,
                 " initialized"));
 
-            readPackageTree(env.cwd, function(err, packageTree) {
+            readPackageTree(cwd, function(err, packageTree) {
 
                 if (err) commands.exit(err);
 
                 var deps = {};
 
-                _.each(options.modules, function(module) {
+                _.each(modules, function(module) {
 
                     var installed = npa(module);
 
@@ -117,7 +135,7 @@ module.exports = function(options, env) {
 
                 fs.writeFileSync(configPath, JSON.stringify(packageJson, null, 4));
 
-                fse.copySync(path.join(__dirname, '..', 'templates'), env.cwd);
+                fse.copySync(path.join(__dirname, '..', 'templates'), cwd);
             });
         });
     });
