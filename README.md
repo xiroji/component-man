@@ -1,6 +1,6 @@
 # Component Man
 
-[![Join the chat at https://gitter.im/xiroji/component-man](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/xiroji/component-man?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Slack Status](https://friends.xiroji.com/badge.svg)](https://friends.xiroji.com)
 [![Dependency Status](https://david-dm.org/xiroji/component-man.svg)](https://david-dm.org/xiroji/component-man)
 [![npm version](https://badge.fury.io/js/component-man.svg)](http://badge.fury.io/js/component-man)
 [![Build Status](https://travis-ci.org/xiroji/component-man.svg?branch=master)](https://travis-ci.org/xiroji/component-man)
